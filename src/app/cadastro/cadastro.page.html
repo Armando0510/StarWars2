@@ -1,0 +1,90 @@
+<ion-header>
+  
+  <ion-toolbar color="dark"> <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>Cadastro</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content  class="ion-padding ion-text-center"  color="warning" >
+ 
+
+  <form [formGroup]="formCadastro">
+  <ion-grid>
+    <ion-row>
+      <ion-item mode="ios" color="transparent">
+        <ion-input placeholder="Nome" formControlName="nome"> </ion-input>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+        <ion-input placeholder="Data de nasc." formControlName="dataNascimento" (click)="openDatePicker()"></ion-input>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+        <ion-input placeholder="CPF" formControlName="cpf" type="tel" maxlength="14 " [brmasker]="{person: true}">
+        </ion-input>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+        <ion-input placeholder="Telefone" formControlName="telefone" type="tel" [brmasker]="{phone: true}">
+        </ion-input>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+        <ion-input type="email"  placeholder="E-mail" formControlName="email" id="email" name="email"></ion-input>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+      <ion-input [type]="password_type"  placeholder="Senha" formControlName="senha" id="senha" name="senha" type={{olho}}></ion-input>
+      <ion-icon name="eye" item-right (click)="mostrarSenha()"></ion-icon>
+      </ion-item>
+      <ion-item mode="ios" color="transparent">
+        <ion-input [type]="password_type"  placeholder="Confirmar a senha" formControlName="confSenha" id="senha" name="senha"  type={{olho}}></ion-input>
+        <ion-icon name="eye" item-right (click)="mostrarSenha()"></ion-icon>
+        </ion-item>
+        <ion-row>
+          <ion-col size="10">
+            <ion-item mode="ios" color="transparent">
+              <ion-input placeholder="CEP" formControlName="cep" [brmasker]="{mask: '99.999-999', len:10}">
+              </ion-input>
+            </ion-item>
+          </ion-col>
+          <ion-col size="2">
+            <div class="btnBuscaCep" (click)="buscaCEP()">
+              <ion-icon class="margem" name="search" mode="ios"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-item mode="ios" color="transparent">
+          <ion-input placeholder="Rua" formControlName="rua"> </ion-input>
+        </ion-item>
+
+        <ion-item mode="ios" color="transparent">
+          <ion-input placeholder="Núm." formControlName="numero"> </ion-input>
+        </ion-item>
+
+        <ion-item mode="ios" color="transparent">
+          <ion-input placeholder="Bairro" formControlName="bairro"> </ion-input>
+        </ion-item>
+
+        <ion-item mode="ios" color="transparent">
+          <ion-input placeholder="Cidade" formControlName="cidade"> </ion-input>
+        </ion-item>
+
+        <ion-item mode="ios" color="transparent">
+          <ion-input placeholder="Estado" formControlName="estado"> </ion-input>
+        </ion-item>
+        
+    </ion-row>
+   
+
+
+    <!-- Botões -->
+    <ion-row>
+  <!-- Botões -->
+
+    <ion-button color="dark" (click)="cadastrar()" [disabled]="!formCadastro.valid">Cadastrar</ion-button>
+ 
+    </ion-row>
+  
+  </ion-grid>
+  </form>
+</ion-content>
+

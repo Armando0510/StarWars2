@@ -1,0 +1,20 @@
+<ion-header>  
+  <ion-toolbar color="dark"> <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>Esqueci Senha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  class="ion-padding ion-text-center"  color="warning" >
+  <form [formGroup]="formEsqueci">
+  <ion-item no-lines>
+    <ion-icon name="person-circle-outline"></ion-icon>
+    <ion-input type="email"  placeholder="E-mail" formControlName="email" id="email" name="email"></ion-input>
+  </ion-item>
+
+  <ion-row>
+    <ion-button color="light" (click)="enviar()" [disabled]="!formEsqueci.valid">Enviar</ion-button>
+  </ion-row>
+</form>
+</ion-content>

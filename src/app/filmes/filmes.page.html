@@ -1,0 +1,30 @@
+<ion-header>
+  
+  <ion-toolbar color="dark"> <ion-buttons slot="start">
+    <ion-back-button></ion-back-button>
+  </ion-buttons>
+    <ion-title>Filmes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content  class="ion-padding ion-text-center"  color="warning" >
+  <ion-card *ngFor="let i of filmes">
+  
+  
+   <ion-card-content>
+   <ion-card-title>
+     <h1>Título do filme: {{ i.title }}</h1>
+     <p>Episódio: {{ i.episode_id }}</p>
+   </ion-card-title>
+   <p>Detalhes do Filme:{{ i.opening_crawl }}</p>
+   <p>Diretor do Filme: {{ i.director }}</p>
+   <p>Produtor do Filme: {{ i.producer }}</p>
+   </ion-card-content>
+   </ion-card> 
+   <ion-row>
+    <ion-button color="dark" (click)="sobre()"> Sobre   </ion-button>
+  </ion-row>
+
+</ion-content>
